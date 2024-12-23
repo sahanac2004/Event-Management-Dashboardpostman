@@ -124,9 +124,9 @@ Create and activate a virtual environment to manage project dependencies:
   ```
 ### 3. Install Dependencies  
 Install the required Python packages using pip:  
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 ### 4. Apply Migrations  
 Set up the database by applying migrations:  
