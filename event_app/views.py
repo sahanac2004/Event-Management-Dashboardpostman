@@ -10,7 +10,11 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'index.html')
 
+from django.shortcuts import render
+from .models import Event
 
+def calendar_view(request):
+    return render(request, 'calendar.html')
 from django.shortcuts import render
 from .models import Event
 from .serializers import EventSerializer
