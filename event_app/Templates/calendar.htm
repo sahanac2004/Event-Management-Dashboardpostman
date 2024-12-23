@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css' rel='stylesheet' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #calendar {
+            width: 900px; /* Fixed width for the calendar */
+            margin: 0 auto; /* Center the calendar */
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            #calendar {
+                width: 100%; /* Make it responsive on smaller screens */
+                padding: 10px;
+            }
+            button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Calendar</h2>
+    <div id='calendar'></div><button onclick="window.location.href='{% url 'landing_page' %}'">Back to Home</button>
+    {% comment %} <button onclick="window.location.href='{% url '' %}'">Back to Home</button> {% endcomment %}
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: {
+                    url: 'http://127.0.0.1:8000/api/events/',  // Adjust this URL to your API endpoint
+                    method: 'GET',
+                    failure: function() {
+                        alert('There was an error while fetching events!');
+                    },
+                    // Customize the event data format if necessary
+                    success: function(data) {
+                        return data.map(event => ({
+                            title: event.name,
+                            start: event.date,  // Adjust according to your model fields
+                            description: event.description,  // Optional: Add more fields if needed
+                        }));
+                    }
+                },
+                editable: true,
+                eventLimit: true // allow "more" link when too many events
+            });
+        });
+    </script>
+</body>
+</html>
