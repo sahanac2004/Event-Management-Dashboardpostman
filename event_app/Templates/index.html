@@ -7,11 +7,65 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <title>Event Management Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; padding: 20px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        h1 { color: #333; }
-        button { margin: 5px; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background-color: #218838; }
+          body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8; /* Light background for the body */
+        }
+        
+        .container {
+            max-width: 800px; /* Maximum width for the container */
+            margin: auto; /* Center the container */
+            padding: 20px; /* Padding inside the container */
+            background: white; /* White background for the container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        
+        h1 {
+            color: #007bff; /* Blue color for the heading */
+            text-align: center; /* Center the heading */
+        }
+        
+        .button-container {
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: row; /* Stack buttons vertically */
+            align-items: center; /* Center align buttons */
+            margin-top: 20px; /* Space between heading and buttons */
+        }
+        
+        button {
+            margin: 5px; /* Margin around buttons */
+            padding: 10px 15px; /* Padding inside buttons */
+            background-color: #007bff; /* Blue background for buttons */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and transform */
+            display: inline-block; /* Inline-block for button layout */
+            font-size: 16px; /* Font size for better readability */
+        }
+        
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+        }
+        
+        button:active {
+            transform: translateY(0); /* Reset lift effect when button is pressed */
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px; /* Reduced padding for smaller screens */
+            }
+            button {
+                width: 100%; /* Full width buttons on smaller screens */
+                padding: 15px; /* Increased padding for better touch targets */
+            }
+        }
     </style>
     
 </head>
