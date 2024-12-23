@@ -173,7 +173,7 @@ http://127.0.0.1:8000
 
 ## 🔧 Backend Integration  
 
-The frontend communicates with the backend using AJAX for seamless user interactions, such as success/error messages during API calls.
+The frontend communicates with the backend using AJAX for seamless user interactions, allowing for the display of success and error messages during API calls to the RESTful endpoints defined in Postman.
 
 ---
 
