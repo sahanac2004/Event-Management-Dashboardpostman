@@ -180,8 +180,7 @@ The frontend communicates with the backend using AJAX for seamless user interact
 ## 🌟 Future Enhancements  
 
 - Add authentication and user roles (e.g., Admin, Event Manager).  
-- Export data to CSV/Excel for reporting.  
-- Integrate Google Calendar for real-time synchronization of events.  
+- Export data to CSV/Excel for reporting.    
 - Add support for push notifications for task deadlines.  
 
 ---
