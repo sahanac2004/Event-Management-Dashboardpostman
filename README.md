@@ -101,38 +101,55 @@
 
 ## 📋 Installation and Setup  
 
-### Clone the Repository  
+Follow the steps below to set up and run the *Event Management Dashboard* application on your local machine:
+
+### 1. Clone the Repository  
+Clone the project repository from GitHub to your local system:  
 bash
 git clone https://github.com/sahanac2004/Event-Management-Dashboardpostman.git
 cd Event-Management-Dashboardpostman
 
 
-### Set Up a Virtual Environment  
-bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+### 2. Set Up a Virtual Environment  
+Create and activate a virtual environment to manage project dependencies:  
+- *For macOS/Linux:*  
+  bash
+  python -m venv venv
+  source venv/bin/activate
+  
+- *For Windows:*  
+  bash
+  python -m venv venv
+  venv\Scripts\activate
+  
 
-
-### Install Dependencies  
+### 3. Install Dependencies  
+Install the required Python packages using pip:  
 bash
 pip install -r requirements.txt
 
 
-### Apply Migrations  
+### 4. Apply Migrations  
+Set up the database by applying migrations:  
 bash
 python manage.py makemigrations
 python manage.py migrate
 
 
-### Run the Development Server  
+### 5. Run the Development Server  
+Start the Django development server:  
 bash
 python manage.py runserver
 
 
-### Access the Application  
-Open your browser and navigate to http://127.0.0.1:8000.
+### 6. Access the Application  
+Open your browser and navigate to the following URL to access the application:  
+
+http://127.0.0.1:8000
+
 
 ---
+
 
 ## 📂 Usage  
 
@@ -173,6 +190,6 @@ The frontend communicates with the backend using AJAX for seamless user interact
 ## 📧 Contact  
 
 For any questions, feedback, or suggestions, feel free to reach out:  
-- *Email:* [sahanac2004@example.com](mailto:sahanac629@gmail.com)  
+- *Email:* [sahanac629@gmail.com](mailto:sahanac629@gmail.com)  
 
 ---
