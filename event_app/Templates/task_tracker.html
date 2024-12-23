@@ -7,15 +7,19 @@
     <title>Task Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2 {
+            background-color: #f0f4f8;
             color: #333;
         }
+        
+        h1, h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
         button {
             padding: 10px 15px;
             margin: 5px;
@@ -24,32 +28,50 @@
             color: white;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
+        
         button:hover {
             background-color: #0056b3;
+            transform: translateY(-2px);
         }
+        
         .hidden {
             display: none;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+        
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px;
             text-align: center;
         }
+        
         th {
-            background-color: #f4f4f4;
+            background-color: #007bff;
+            color: white;
         }
+        
+        td {
+            background-color: #ffffff;
+        }
+        
+        td:hover {
+            background-color: #f1f1f1;
+        }
+        
         #loadingIndicator {
             display: none;
             font-weight: bold;
-            color: blue;
+            color: #007bff;
         }
+        
         .dialog {
             display: none;
             position: fixed;
@@ -59,14 +81,17 @@
             background-color: white;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             padding: 20px;
             width: 300px;
         }
+        
         .dialog h3 {
             margin: 0 0 10px;
+            color: #007bff;
         }
+        
         .dialog button {
             background-color: #007bff;
             border: none;
@@ -74,10 +99,13 @@
             color: white;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
+        
         .dialog button:hover {
             background-color: #0056b3;
         }
+        
         .overlay {
             display: none;
             position: fixed;
@@ -87,6 +115,83 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 999;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        
+        @media (max-width: 600px) {
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        
+            .dialog {
+                width: 90%;
+            }
+        }table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #007bff; /* Header background color */
+            color: white; /* Header text color */
+            font-weight: bold; /* Bold text for headers */
+        }
+        
+        td {
+            background-color: #ffffff; /* Default background color for table cells */
+            color: #333; /* Default text color for table cells */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        
+        td:hover {
+            background-color: #f1f1f1; /* Light gray background on hover */
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f9f9f9; /* Light background for even rows */
+        }
+        
+        tr:nth-child(odd) td {
+            background-color: #ffffff; /* White background for odd rows */
+        }
+        
+        tr:hover td {
+            background-color: #e9ecef; /* Slightly darker background on row hover */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
